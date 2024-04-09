@@ -7,7 +7,8 @@ import {
   from
 } from '@apollo/client'
 import { onError } from '@apollo/client/link/error'
-
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Client from './layouts/Client'
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
     graphqlErrors.map(({ message, location, path }) => {
@@ -27,7 +28,13 @@ const client = ApolloClient({
 })
 
 function App() {
-  return <div></div>
+  return (
+    <div>
+      <Router>
+        <Route path="/order/:id" component={Client} />
+      </Router>
+    </div>
+  )
 }
 
 export default App
