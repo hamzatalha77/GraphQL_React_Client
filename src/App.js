@@ -31,7 +31,7 @@ function App() {
   return (
     <div>
       <Router>
-        <Route path="/order/:id" component={Client} />
+        <Route path="/client/*" component={Client} />
       </Router>
     </div>
   )
