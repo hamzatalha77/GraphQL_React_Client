@@ -3,4 +3,5 @@
 @tailwind utilities;
 
 .app {
+  margin: 0 auto;
 }
